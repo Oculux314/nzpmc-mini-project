@@ -1,8 +1,13 @@
 const express = require('express');
+const initaliseRoutes = require('./routes');
 
-const app = express();
-const PORT = process.env.PORT || 3001;
+module.exports = () => {
+  const app = express();
+  const PORT = process.env.PORT || 3001;
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+  initaliseRoutes(app);
+
+  app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+  });
+};

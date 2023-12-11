@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "client": "cd client; npm run dev",
-    "service": "cd service; npm run dev",
+    "client": "cd client && npm run dev",
+    "service": "cd ./service && npm run dev",
     "lint": "cd client && npm run lint && cd ../service && npm run lint",
     "lint:fix": "cd client && npm run lint:fix && cd ../service && npm run lint:fix"
   },
