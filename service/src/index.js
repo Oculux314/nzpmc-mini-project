@@ -1,5 +1,6 @@
 const express = require('express');
 const initaliseRoutes = require('./routes');
+require('dotenv').config();
 
 module.exports = () => {
   const app = express();
