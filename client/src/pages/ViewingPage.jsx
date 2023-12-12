@@ -1,7 +1,15 @@
+import PageHeader from "../components/PageHeader";
+import PersonList from "../components/PersonList";
+
 function ViewingPage() {
   return (
-    <div>
-      <h1>Viewing Page</h1>
+    <div className="page">
+      <PageHeader
+        headerText="Viewing Page"
+        linkTo="registration"
+        linkText="Register Here"
+      />
+      <PersonList />
     </div>
   );
 }

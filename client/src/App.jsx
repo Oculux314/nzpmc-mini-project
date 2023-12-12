@@ -1,12 +1,12 @@
-import { useState, createContext } from "react";
+import { useState } from "react";
+import PageContext from "./contexts/PageContext";
 import RegistrationPage from "./pages/RegistrationPage";
 import ViewingPage from "./pages/ViewingPage";
 import DefaultPage from "./pages/DefaultPage";
 
-const PageContext = createContext();
+
 
 function renderPage(page) {
-  console.log("renderPage", page);
   switch (page) {
     case "registration":
       return <RegistrationPage />;
@@ -18,10 +18,10 @@ function renderPage(page) {
 }
 
 function App() {
-  const [page, changePage] = useState("viewing");
+  const [page, setPage] = useState("404");
 
   return (
-    <PageContext.Provider value={{ page, changePage }}>
+    <PageContext.Provider value={{ page, setPage }}>
       {renderPage(page)}
     </PageContext.Provider>
   );

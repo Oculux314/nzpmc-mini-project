@@ -1,7 +1,13 @@
+import PageHeader from "../components/PageHeader";
+
 function RegistrationPage() {
   return (
-    <div>
-      <h1>Registration Page</h1>
+    <div className="page">
+      <PageHeader
+        headerText="Registration Page"
+        linkTo="viewing"
+        linkText="View Registrations"
+      />
     </div>
   );
 }
