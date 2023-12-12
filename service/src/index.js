@@ -4,7 +4,7 @@ require('dotenv').config();
 
 module.exports = () => {
   const app = express();
-  const PORT = process.env.PORT || 3001;
+  const { PORT } = process.env || 3001;
 
   initaliseRoutes(app);
 
