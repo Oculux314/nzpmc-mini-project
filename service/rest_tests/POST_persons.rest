@@ -3,5 +3,5 @@ Content-Type: application/json
 
 {
   "name": "Arto Hellas",
-  "DOB": "2019-05-30T18:30:00.000Z",
+  "birthdate": "2019-05-30T18:30:00.000Z"
 }

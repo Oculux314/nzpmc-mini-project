@@ -1,16 +1,16 @@
 const createPersonService = require('../services/createPersonService');
 
 function sanitiseBody(body) {
-  if (!body || typeof body !== 'object' || body.keys.length === 0) {
+  if (!body || typeof body !== 'object' || !Object.keys(body).length) {
     throw new Error('Body is required');
   }
 
-  const { name, DOB } = body;
-  if (!name || !DOB) {
-    throw new Error('Name and DOB are required');
+  const { name, birthdate } = body;
+  if (!name || !birthdate) {
+    throw new Error('Name and birthdate are required');
   }
 
-  return { name, DOB };
+  return { name, birthdate };
 }
 
 async function createPerson(body) {

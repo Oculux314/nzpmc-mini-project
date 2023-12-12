@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const personSchema = new mongoose.Schema({
   name: String,
-  DOB: Date, // Date of birth
+  birthdate: Date,
 });
 
 const Person = mongoose.model('Person', personSchema);
