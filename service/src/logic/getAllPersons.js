@@ -1,8 +1,7 @@
 const getAllPersonsService = require('../services/getAllPersonsService');
 
 async function getAllPersons() {
-  const persons = await getAllPersonsService();
-  return persons;
+  return getAllPersonsService();
 }
 
 module.exports = getAllPersons;

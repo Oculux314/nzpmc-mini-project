@@ -1,5 +1,6 @@
 const express = require('express');
 const getAllPersonsRoute = require('./getAllPersonsRoute');
+const getPersonRoute = require('./getPersonRoute');
 const createPersonRoute = require('./createPersonRoute');
 const defaultRoute = require('./defaultRoute');
 const errorHandler = require('./errorHandler');
@@ -10,6 +11,7 @@ function initialiseUses(app) {
 
 function initialiseRoutes(app) {
   getAllPersonsRoute(app);
+  getPersonRoute(app);
   createPersonRoute(app);
 }
 

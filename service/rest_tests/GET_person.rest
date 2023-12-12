@@ -1,0 +1,2 @@
+GET http://localhost:3001/persons/Arto%20Hellas
+Content-Type: application/json
