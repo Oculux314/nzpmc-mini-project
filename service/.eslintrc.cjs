@@ -24,5 +24,6 @@ module.exports = {
   rules: {
     'no-console': 'off',
     indent: ['error', 2],
+    'arrow-body-style': 'off',
   },
 };

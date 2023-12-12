@@ -1,8 +1,8 @@
 const { createInteraction } = require('.');
 const Person = require('../models/person');
 
-const getAllPersons = createInteraction(() => {
-  Person.find({});
+const getAllPersonsService = createInteraction(() => {
+  return Person.find({});
 });
 
-module.exports = getAllPersons;
+module.exports = getAllPersonsService;

@@ -1,9 +1,11 @@
-const getAllPersons = require('../services/getAllPersonsService');
+const getAllPersons = require('../logic/getAllPersons');
 
-const initialiseGetAllPersonsRoute = (app) => {
-  app.get('/persons', (req, res) => {
-    res.send(getAllPersons());
+function getAllPersonsRoute(app) {
+  app.get('/persons', (req, res, next) => {
+    getAllPersons().catch(next).then((persons) => {
+      res.send(persons);
+    });
   });
-};
+}
 
-module.exports = initialiseGetAllPersonsRoute;
+module.exports = getAllPersonsRoute;

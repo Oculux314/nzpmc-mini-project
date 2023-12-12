@@ -1,28 +1,11 @@
-const createPerson = require('../services/createPersonService');
+const createPerson = require('../logic/createPerson');
 
-function sanitiseBody(body) {
-  if (!body) {
-    throw new Error('Body is required');
-  }
-
-  const { name, DOB } = body;
-  if (!name || !DOB) {
-    throw new Error('Name and DOB are required');
-  }
-
-  return { name, DOB };
+function createPersonRoute(app) {
+  app.post('/persons', async (req, res, next) => {
+    createPerson(req.body).catch(next).then((person) => {
+      res.send(person);
+    });
+  });
 }
 
-const initialiseCreatePersonRoute = (app) => {
-  app.post('/persons', async (req, res) => {
-    console.log(req.body);
-    try {
-      const person = await createPerson(sanitiseBody(req.body));
-      res.send(person);
-    } catch (error) {
-      res.status(400).send(error.message);
-    }
-  });
-};
-
-module.exports = initialiseCreatePersonRoute;
+module.exports = createPersonRoute;
