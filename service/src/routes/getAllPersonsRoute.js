@@ -1,8 +1,8 @@
-const getAllPersons = require('../logic/getAllPersons');
+const getAllPersonsService = require('../services/getAllPersonsService');
 
 function getAllPersonsRoute(app) {
   app.get('/persons', (req, res, next) => {
-    getAllPersons().catch(next).then((persons) => {
+    getAllPersonsService().catch(next).then((persons) => {
       res.send(persons);
     });
   });
