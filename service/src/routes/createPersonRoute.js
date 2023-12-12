@@ -14,11 +14,10 @@ function sanitiseBody(body) {
 }
 
 const initialiseCreatePersonRoute = (app) => {
-  app.post('/persons', (req, res) => {
-    throw new Error('Unimplemented');
+  app.post('/persons', async (req, res) => {
     console.log(req.body);
     try {
-      const person = createPerson(sanitiseBody(req.body));
+      const person = await createPerson(sanitiseBody(req.body));
       res.send(person);
     } catch (error) {
       res.status(400).send(error.message);
