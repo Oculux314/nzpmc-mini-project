@@ -1,7 +1,7 @@
 const createPersonService = require('../services/createPersonService');
 
 function sanitiseBody(body) {
-  if (!body) {
+  if (!body || typeof body !== 'object' || body.keys.length === 0) {
     throw new Error('Body is required');
   }
 

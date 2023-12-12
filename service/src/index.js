@@ -9,6 +9,6 @@ module.exports = () => {
   initialiseServer(app);
 
   app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+    console.log(`Service is running on port ${PORT}`);
   });
 };

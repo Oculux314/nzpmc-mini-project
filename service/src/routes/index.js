@@ -1,28 +1,27 @@
 const express = require('express');
 const getAllPersonsRoute = require('./getAllPersonsRoute');
 const createPersonRoute = require('./createPersonRoute');
+const defaultRoute = require('./defaultRoute');
+const errorHandler = require('./errorHandler');
 
-const initialisePreuses = (app) => {
+function initialiseUses(app) {
   app.use(express.json());
-};
+}
 
-const initialiseRoutes = (app) => {
+function initialiseRoutes(app) {
   getAllPersonsRoute(app);
   createPersonRoute(app);
-};
+}
 
-const initialisePostuses = (app) => {
-  // TODO
+function initialiseErrorHandling(app) {
+  defaultRoute(app); // 404 page
+  errorHandler(app); // Other errors
+}
 
-  // app.use((req, res, next) => {
-  //   res.status(404).send('Not found');
-  // });
-};
-
-const initialiseServer = (app) => {
-  initialisePreuses(app);
+function initialiseServer(app) {
+  initialiseUses(app);
   initialiseRoutes(app);
-  initialisePostuses(app);
-};
+  initialiseErrorHandling(app);
+}
 
 module.exports = { initialiseServer };
