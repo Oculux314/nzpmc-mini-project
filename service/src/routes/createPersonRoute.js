@@ -1,4 +1,4 @@
-const createPerson = require('../database/createPerson');
+const createPerson = require('../services/createPersonService');
 
 function sanitiseBody(body) {
   if (!body) {
@@ -13,7 +13,7 @@ function sanitiseBody(body) {
   return { name, DOB };
 }
 
-module.exports = (app) => {
+const initialiseCreatePersonRoute = (app) => {
   app.post('/persons', (req, res) => {
     throw new Error('Unimplemented');
     console.log(req.body);
@@ -25,3 +25,5 @@ module.exports = (app) => {
     }
   });
 };
+
+module.exports = initialiseCreatePersonRoute;

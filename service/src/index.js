@@ -1,12 +1,12 @@
 const express = require('express');
-const initaliseRoutes = require('./routes');
+const { initialiseRoutes } = require('./routes');
 require('dotenv').config();
 
 module.exports = () => {
   const app = express();
   const { PORT } = process.env || 3001;
 
-  initaliseRoutes(app);
+  initialiseRoutes(app);
 
   app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);

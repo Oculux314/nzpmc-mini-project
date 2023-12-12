@@ -1,7 +1,9 @@
-const initaliseGetAllPersonsRoute = require('./getAllPersons');
-const initaliseCreatePersonRoute = require('./createPerson');
+const initaliseGetAllPersonsRoute = require('./getAllPersonsRoute');
+const initaliseCreatePersonRoute = require('./createPersonRoute');
 
-module.exports = (app) => {
+const initialiseRoutes = (app) => {
   initaliseGetAllPersonsRoute(app);
   initaliseCreatePersonRoute(app);
 };
+
+module.exports = { initialiseRoutes };
