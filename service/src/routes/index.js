@@ -1,11 +1,17 @@
 const express = require('express');
+const cors = require('cors');
 const getAllPersonsRoute = require('./getAllPersonsRoute');
 const getPersonRoute = require('./getPersonRoute');
 const createPersonRoute = require('./createPersonRoute');
 const defaultRoute = require('./defaultRoute');
 const errorHandler = require('./errorHandler');
+const log = require('../utils/log');
 
 function initialiseUses(app) {
+  if (process.env.MODE === 'DEV') {
+    log('DEV mode: enabling CORS policy *', 'INFO');
+    app.use(cors());
+  }
   app.use(express.json());
 }
 
