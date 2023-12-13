@@ -4,7 +4,11 @@ import RegistrationPage from "./pages/RegistrationPage";
 import ViewingPage from "./pages/ViewingPage";
 import DefaultPage from "./pages/DefaultPage";
 
+import getAllPersonsService from "./services/getAllPersonsService.js";
 
+getAllPersonsService().then((persons) => {
+  console.log(persons);
+});
 
 function renderPage(page) {
   switch (page) {
