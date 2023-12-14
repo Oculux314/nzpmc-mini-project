@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0px;
   padding: 0px;
@@ -24,8 +28,8 @@ div.page-header > h1 {
 
 div.person-list {
   background-color: lightgrey;
-  width: 60vw;
-  height: 70vh;
+  width: 62vw;
+  height: 71vh;
   margin: auto;
   border-radius: 1vh;
   padding: 1vh;
@@ -33,11 +37,19 @@ div.person-list {
 
 div.person-element {
   background-color: lightblue;
-  width: auto;
-  height: 10vh;
-  margin: auto;
+  width: 15vw;
+  height: 9vh;
+  margin: 1vh;
   border-radius: 1vh;
-  padding: 1vh;
+  padding: 1.6vh;
+}
+
+div.person-element > p {
+  margin: 0px;
+  margin-bottom: 1vh;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 div.person-element:hover {
