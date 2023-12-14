@@ -1,4 +1,6 @@
+import PageBody from "../components/PageBody.jsx";
 import PageHeader from "../components/PageHeader";
+import RegistrationForm from "../components/RegistrationForm.jsx";
 
 function RegistrationPage() {
   return (
@@ -8,6 +10,7 @@ function RegistrationPage() {
         linkTo="viewing"
         linkText="View Registrations"
       />
+      <RegistrationForm />
     </div>
   );
 }

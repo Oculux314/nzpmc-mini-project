@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import PageContext from "./contexts/PageContext";
 import getAllPersonsService from "./services/getAllPersonsService.js";
 import RegistrationPage from "./pages/RegistrationPage";
@@ -18,20 +18,15 @@ function renderPage(page) {
 }
 
 function updatePersons(setPersons) {
-  getAllPersonsService().then((persons) => setPersons(persons));
-  setTimeout(() => updatePersons(setPersons), 10000);
+  getAllPersonsService().then((persons) => setPersons(persons)).catch((err) => alert(err));
 }
 
 function App() {
   const [page, setPage] = useState("viewing");
   const [persons, setPersons] = useState([]);
 
-  useEffect(() => {
-    updatePersons(setPersons);
-  }, []);
-
   const data = {
-    persons: { get: persons, set: setPersons },
+    persons: { get: persons, set: setPersons, update: updatePersons },
   };
 
   return (

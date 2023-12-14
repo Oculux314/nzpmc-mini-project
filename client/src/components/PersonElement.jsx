@@ -1,4 +1,4 @@
-import propTypes from "prop-types";
+import PropTypes from "prop-types";
 
 function PersonElement({ person }) {
   return (
@@ -14,7 +14,7 @@ function PersonElement({ person }) {
 }
 
 PersonElement.propTypes = {
-  person: propTypes.object.isRequired,
+  person: PropTypes.object.isRequired,
 };
 
 export default PersonElement;

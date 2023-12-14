@@ -26,22 +26,36 @@ div.page-header > h1 {
   margin: 0px 0px 2vh;
 }
 
-div.person-list {
+div.page-body {
   background-color: lightgrey;
-  width: 62vw;
-  height: 71vh;
+  width: calc(60vw + 6vh + 2vh);
+  height: 73vh;
   margin: auto;
   border-radius: 1vh;
   padding: 1vh;
+  overflow-y: scroll;
+}
+
+div.person-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 div.person-element {
   background-color: lightblue;
+  border: 0.1vh solid darkslategrey;
   width: 15vw;
   height: 9vh;
-  margin: 1vh;
+  margin: 0.5vh;
   border-radius: 1vh;
   padding: 1.6vh;
+  cursor: pointer;
+}
+
+div.person-element:hover {
+  background-color: lightsalmon;
+  border: 0.1vh solid orangered;
 }
 
 div.person-element > p {
@@ -51,7 +65,31 @@ div.person-element > p {
   overflow: hidden;
   text-overflow: ellipsis;
 }
+div.registration {
+  padding: 1.5vh;
+  border-radius: 1vh;
+  background-color: lightgrey;
+  display: inline-block;
+  margin: auto;
+  text-align: right;
+}
 
-div.person-element:hover {
+div.registration input {
+  margin: 0px 0px 1vh;
+  height: 2.5vh;
+  width: 15vw;
+}
+
+div.registration button {
+  height: 2.5vh;
+  width: 15vw;
+  border: 0.1vh solid darkslategrey;
+  border-radius: 0.5vh;
+  background-color: lightblue;
+  cursor: pointer;
+}
+
+div.registration button:hover {
   background-color: lightsalmon;
+  border: 0.1vh solid orangered;
 }
