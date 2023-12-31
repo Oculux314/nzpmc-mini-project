@@ -10,4 +10,8 @@
 
 1. Now, open another terminal and run: `npm run client`
 
-1. Finally, open `http://localhost:5173/`
+1. Finally, open http://localhost:5173/
+
+## Deployment
+
+Can be found at https://nzpmc-mini-project.fly.dev/

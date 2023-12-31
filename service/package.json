@@ -2,12 +2,16 @@
   "name": "nzpmc-service",
   "version": "1.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node main.js",
-    "dev": "nodemon main.js",
+    "start": "node .",
+    "dev": "nodemon .",
     "lint": "eslint .",
-    "lint:fix": "eslint --fix ."
+    "lint:fix": "eslint --fix .",
+    "build:client": "cd ../client && npm run build && shx cp -r dist ../service/public",
+    "fly:deploy": "fly deploy",
+    "fly:deploy-all": "npm run build:client && npm run deploy",
+    "fly:logs": "fly logs"
   },
   "author": "",
   "license": "ISC",
@@ -15,7 +19,9 @@
     "eslint": "^8.55.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.29.0",
-    "nodemon": "^3.0.2"
+    "nodemon": "^3.0.2",
+    "shx": "^0.3.4",
+    "@flydotio/dockerfile": "^0.5.0"
   },
   "dependencies": {
     "cors": "^2.8.5",

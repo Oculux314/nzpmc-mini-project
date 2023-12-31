@@ -12,6 +12,7 @@ function initialiseUses(app) {
     log('DEV mode: enabling CORS policy *', 'INFO');
     app.use(cors());
   }
+  app.use(express.static('public/dist'));
   app.use(express.json());
 }
 
