@@ -1,4 +1,6 @@
 const express = require('express');
+const fs = require('fs');
+const path = require('path');
 const cors = require('cors');
 const getAllPersonsRoute = require('./getAllPersonsRoute');
 const getPersonRoute = require('./getPersonRoute');
@@ -12,7 +14,14 @@ function initialiseUses(app) {
     log('DEV mode: enabling CORS policy *', 'INFO');
     app.use(cors());
   }
-  app.use(express.static('public/dist'));
+
+  const pathToDist = path.join(__dirname, '../../public/dist');
+  const indexHtml = fs.readFileSync(path.join(pathToDist, 'index.html')).toString().replaceAll(/\s/g, '');
+  log(`Serving static files from ${pathToDist}`, 'INFO');
+  log(`[TEST] index.html: ${indexHtml}`);
+  app.use(express.static(pathToDist));
+
+  log('Enabling JSON parser', 'INFO');
   app.use(express.json());
 }
 
